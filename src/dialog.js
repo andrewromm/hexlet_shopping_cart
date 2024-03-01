@@ -2,8 +2,8 @@ import readlineSync from "readline-sync";
 
 function addItem(cart) {
   const itemName = readlineSync.question("What item would you like to add? ");
-  const price = parseFloat(readlineSync.question("What is the price? "));
-  const quantity = parseInt(readlineSync.question("How many? "));
+  const price = parseFloat(readlineSync.questionFloat("What is the price? "));
+  const quantity = parseInt(readlineSync.questionInt("How many? "));
   try {
     cart.addItem(itemName, price, quantity);
     console.log("Item added!");
@@ -24,7 +24,7 @@ function updateQuantity(cart) {
   const itemName = readlineSync.question(
     "What item would you like to update? "
   );
-  const newQuantity = parseInt(readlineSync.question("How many? "));
+  const newQuantity = parseInt(readlineSync.questionInt("How many? "));
   try {
     cart.updateQuantity(itemName, newQuantity);
     console.log("Item updated!");
